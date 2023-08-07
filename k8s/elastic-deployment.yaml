@@ -43,6 +43,13 @@ spec:
           volumeMounts:
             - mountPath: /usr/share/elasticsearch/data
               name: elastic-data-volume
+      initContainers:
+      - name: init-elastic-data-volume
+        image: docker.elastic.co/elasticsearch/elasticsearch:7.17.5
+        command: ['chown', '-R', '1000:1000', '/usr/share/elasticsearch/data']
+        volumeMounts:
+        - name: elastic-data-volume
+          mountPath: /usr/share/elasticsearch/data
       restartPolicy: Always
       volumes:
         - name: elastic-data-volume

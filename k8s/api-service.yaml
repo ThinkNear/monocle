@@ -8,6 +8,7 @@ metadata:
     app.kubernetes.io/part-of: monocle
   name: api
 spec:
+  type: NodePort
   ports:
     - name: http-rest-api
       port: 8080
