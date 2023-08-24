@@ -10,6 +10,26 @@ metadata:
 data:
   config.yaml: |+
     workspaces:
-      - name: demo
-        crawlers: []
-
+      - name: inmarket
+        crawlers:
+          - name: NinthDecimal
+            provider:
+              github_organization: NinthDecimal
+            update_since: '2023-01-01'
+          - name: ThinkNear
+            provider:
+              github_organization: ThinkNear
+            update_since: '2023-01-01'
+        projects:
+          - name: NinthDecimal
+            repository_regex: ".*NinthDecimal/.*"
+          - name: ThinkNear
+            repository_regex: ".*ThinkNear/.*"
+        search_aliases:
+          - name: bots
+            alias: '(author:"inmarket-cloud" or
+              author:"nd-sysadmin" or 
+              author:"thinknear-atlantis-user" or 
+              author:"thinknear-atlantis" or 
+              author:"thinknear-jenkins-2"
+              )'

@@ -29,6 +29,8 @@ spec:
           env:
             - name: MONOCLE_ELASTIC_URL
               value: http://elastic:9200
+            - name: MONOCLE_PUBLIC_URL
+              value: http://ae89287cf66b04493a8f7f6ef93a2640-2054132594.us-east-1.elb.amazonaws.com:8080
           image: quay.io/change-metrics/monocle:1.8.0
           livenessProbe:
             httpGet:

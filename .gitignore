@@ -3,7 +3,6 @@ dist
 *.py[oc]
 dist-newstyle
 /data
-etc
 .venv
 .tox
 .mypy_cache
